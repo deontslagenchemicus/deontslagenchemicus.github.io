@@ -1,8 +1,61 @@
 <html>
+<style>
+    body {
+        background-color: darkslategrey;
+        color: white;
+    }
+
+    p {
+        font-family: verdana;
+    }
+    .center {
+        text-align: center;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+
+<script type="text/javascript">
+
+    // Function called when "Send" button is clicked
+    function buttonClicked() {
+        var text = document.getElementById("entryField").value;
+        var correctValue = "1234";
+
+        // Hide entry fields
+        document.getElementById("entry").className = "hidden";
+
+        if (text === correctValue) {
+            // alert("OK!");
+
+            // Show checkmark
+            document.getElementById("good").className = "";
+        } else {
+            // alert("Wrong!");
+
+            // Show bomb
+            document.getElementById("bomb").className = "";
+        }
+    }
+
+</script>
+
 <body>
-
-<p>Hello world!</p>
-
+    <div id="good" class="hidden">
+        <h1>&#10003; Alright!</h1>
+    </div>
+    <div id="bomb" class="hidden">
+        <h1>&#128163; Boom!</h1>
+    </div>
+    <div id="entry">
+        <p>What is 1 and 2 and 3 and 4?</p>
+        <p>
+            <!-- Tel input give you numeric keyboard on phones -->
+            <input type="tel" maxlength="6" id="entryField" />
+            <input type="button" id="sendButton" value="Send" onclick="buttonClicked();" />
+        </p>
+    </div>
 </body>
 
 </html>
