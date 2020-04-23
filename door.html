@@ -1,0 +1,48 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script type="text/javascript">
+        // Function to resize the image map
+        window.onload = function () {
+            var ImageMap = function (map) {
+                var n,
+                    areas = map.getElementsByTagName('area'),
+                    len = areas.length,
+                    coords = [],
+                    previousWidth = 854/0.8; // original image is 854 pixels, divided by 80%
+                for (n = 0; n < len; n++) {
+                    coords[n] = areas[n].coords.split(',');
+                }
+                this.resize = function () {
+                    var n, m, clen,
+                        x = document.body.clientWidth / previousWidth;
+                    for (n = 0; n < len; n++) {
+                        clen = coords[n].length;
+                        for (m = 0; m < clen; m++) {
+                            coords[n][m] *= x;
+                        }
+                        areas[n].coords = coords[n].join(',');
+                    }
+                    previousWidth = document.body.clientWidth;
+                    return true;
+                };
+                window.onresize = this.resize;
+            },
+                imageMap = new ImageMap(document.getElementById('door-map'));
+            imageMap.resize();
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="center">
+        <img src="images/door.png" width="80%" usemap="#map" />
+        <map name="map" id="door-map">
+            <area shape="rect" coords="442,386,561,446" href="box.html" />
+        </map>
+    </div>
+</body>
+
+</html>

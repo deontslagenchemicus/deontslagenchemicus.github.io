@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -11,10 +10,8 @@
             var correctValue = "1234";
 
             if (text === correctValue) {
-                window.location.href = "door.html";
+                window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             } else {
-                // Show error
-                // document.getElementById("errorMessage").className = "inline";
                 document.getElementById("entryField").className = "error";
             }
         }
@@ -25,18 +22,19 @@
                 return false;
             }
         }
-
     </script>
 </head>
 
 <body>
     <div class="center">
-        <img src="images/map.png" width="80%" />
+        <img src="images/bomb.png" width=80% />
     </div>
-    <div class="center">
+
+    <div class="center-entry" id="entry">
         <p>
-            <div id="errorMessage" class="hidden">&#x274c;</div>
-            <input class="" type="text" id="entryField" onkeypress="return checkKey(event)" />
+            Ontmantelcode:
+            <!-- Tel input give you numeric keyboard on phones -->
+            <input type="text" id="entryField" onkeypress="return checkKey(event)"/>
             <input type="button" id="sendButton" value="Send" onclick="buttonClicked();" />
         </p>
     </div>
