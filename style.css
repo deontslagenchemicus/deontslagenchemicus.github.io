@@ -42,11 +42,6 @@ p {
     border-width: 2px;
 }
 
-.center-entry {
-    text-align: center;
-    display: inline;
-}
-
 input {
     margin: 0.5em;
 }
