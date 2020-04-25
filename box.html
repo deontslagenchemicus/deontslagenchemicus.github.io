@@ -7,8 +7,9 @@
         // Function called when "Send" button is clicked
         function buttonClicked() {
             var text = document.getElementById("entryField").value;
-            var correctValue = "1234";
+            var correctValue = "MjQxNjM2MzE3Nw==";
 
+            text = btoa(text.toLowerCase());
             if (text === correctValue) {
                 window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             } else {

@@ -8,8 +8,9 @@
         // Function called when "Send" button is clicked
         function buttonClicked() {
             var text = document.getElementById("entryField").value;
-            var correctValue = "1234";
+            var correctValue = "YWNjaWpuc3RvcmVu";
 
+            text = btoa(text.toLowerCase());
             if (text === correctValue) {
                 window.location.href = "door.html";
             } else {
